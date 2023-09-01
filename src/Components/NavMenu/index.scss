@@ -1,6 +1,5 @@
 @import '~bootstrap/scss/bootstrap';
 @import '../../styles/utils';
-@import '~normalize.css';
 
 
 .NavMenu {
@@ -18,8 +17,21 @@
   }
 
   &__title {
-    font-size: 1rem;
     padding: 0;
     margin: 0;
+
+    font-size: 1rem;
+    color: $main-color;
+  }
+}
+
+.custom-search-input {
+  &::placeholder {
+    color: $main-color;
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 0.25rem rgba(32, 201, 151, 0.25);
+    border: $main-color;
   }
 }

@@ -1,6 +1,8 @@
 import { memo, useEffect, useState } from 'react';
 import { Navbar } from 'react-bootstrap';
 
+import './index.scss';
+
 const daysOfWeekUkr = [
   'Неділя',
   'Понеділок',
@@ -44,20 +46,38 @@ export const DateComponent = memo(() => {
   const ukrainianDayOfWeek = daysOfWeekUkr[dayIndex];
 
   const monthIndex = currentDate.getMonth();
-  const ukrainianMonth = months[monthIndex];
+  const ukrainianMonth = months[monthIndex].slice(0, 3);
 
-  const hours = date.getHours();
-  const minutes = date.getMinutes();
-  const day = date.getDate();
+  let hours = date.getHours();
+  let minutes = date.getMinutes();
+  let day = date.getDate();
+  const year = date.getFullYear();
+
+  day = day < 10 ? '0' + day : day;
+  hours = hours < 10 ? '0' + hours : hours;
+  minutes = minutes < 10 ? '0' + minutes : minutes;
+
+  const time = `${hours}:${minutes}`;
+  const dayAndMonth = `${day} ${ukrainianMonth}, ${year}`;
 
   return (
-    <Navbar.Brand as={'div'} className="NavMenu__brand">
-      <span> {ukrainianDayOfWeek} </span>
-      <span> {day < 10 ? '0' + day : day} </span>
-      <span> {ukrainianMonth} </span>
-      <span>
-        {hours < 10 ? '0' + hours : hours}:{minutes < 10 ? '0' + minutes : minutes}
-      </span>
+    <Navbar.Brand className="Date">
+      <div className='Date__format'> 
+        {ukrainianDayOfWeek}
+      </div>
+      
+      <div className='Date__block'>
+        <span className='Date__format'> 
+          {dayAndMonth}
+        </span>
+        
+        <span 
+          className='Date__format Date__format--clock'
+        > 
+          {time}
+        </span>
+      </div>
+
     </Navbar.Brand>
   );
 });
