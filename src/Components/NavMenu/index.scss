@@ -4,6 +4,8 @@
 
 .NavMenu {
   display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
   
   &__investory {
     @include flex-center;
@@ -26,6 +28,11 @@
 }
 
 .custom-search-input {
+  @media (max-width: 500px) {
+    display: none;
+  }
+
+
   &::placeholder {
     color: $main-color;
   }
