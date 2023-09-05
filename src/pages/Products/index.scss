@@ -1,6 +1,8 @@
 @import '../../styles/utils';
 
 .Product {
+  height: max-content;
+
   &__item {
     @include flex-center;
   }
@@ -8,6 +10,12 @@
   &__block {
     display: flex;
     flex-direction: column;
+
+    &--item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
   }
 }
 

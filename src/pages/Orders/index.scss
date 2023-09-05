@@ -1,0 +1,29 @@
+@import '../../styles/utils';
+
+.OrderList {
+  align-items: center;
+
+  &__item {
+    padding: 20px;
+    
+    @include flex-center;
+
+    &--button {
+      &:hover {
+        background-color: $main-color;
+      }
+    }
+  }
+
+
+  &__block {
+    display: flex;
+    flex-direction: column;
+
+    padding: 8px;
+  }
+}
+
+.ProductList {
+  @include flex-center;
+}

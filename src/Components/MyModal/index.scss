@@ -1,0 +1,14 @@
+@import '../../styles/utils';
+
+.Modal {
+  &__footer {
+    background-color: $main-color;
+  }
+
+  &__button {
+    &--block {
+      @include flex-center;
+      gap: 5px;
+    }
+  }
+}

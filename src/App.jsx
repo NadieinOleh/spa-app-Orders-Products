@@ -4,8 +4,20 @@ import { NavigationMenu } from './Components/NavigationMenu';
 import { TopMenu } from './Components/TopMenu';
 import { Orders } from './pages/Orders';
 import { Products } from './pages/Products';
+import { orders, products } from './api/app';
+import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+import { setOrders } from './features/OrdersSlice';
+import { setProducts } from './features/ProductsSlice';
+
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(setOrders(orders));
+    dispatch(setProducts(products));
+  })
 
   return (
     <div className="App">
