@@ -1,7 +1,10 @@
 import { memo, useEffect, useState } from 'react';
-import { Navbar } from 'react-bootstrap';
+import { Badge, Navbar } from 'react-bootstrap';
+import io from 'socket.io-client';
 
 import './index.scss';
+
+const socket = io('http://localhost:3000');
 
 const daysOfWeekUkr = [
   'Неділя',
@@ -9,39 +12,50 @@ const daysOfWeekUkr = [
   'Вівторок',
   'Середа',
   'Четвер',
-  'П\'ятниця',
+  "П'ятниця",
   'Субота',
 ];
 
 const months = [
-  "Січень",
-  "Лютий",
-  "Березень",
-  "Квітень",
-  "Травень",
-  "Червень",
-  "Липень",
-  "Серпень",
-  "Вересень",
-  "Жовтень",
-  "Листопад",
-  "Грудень"
+  'Січень',
+  'Лютий',
+  'Березень',
+  'Квітень',
+  'Травень',
+  'Червень',
+  'Липень',
+  'Серпень',
+  'Вересень',
+  'Жовтень',
+  'Листопад',
+  'Грудень',
 ];
 
 export const DateComponent = memo(() => {
+  const [activeSessions, setActiveSessions] = useState(0);
   const currentDate = new Date();
 
   const [date, setDate] = useState(currentDate);
 
+useEffect(() => {
+    socket.on('updateActiveSessions', (newActiveSessions) => {
+      setActiveSessions(newActiveSessions);
+    });
+
+    return () => {
+      socket.disconnect();
+    };
+  }, []);
+
   useEffect(() => {
     const timerId = setInterval(() => {
       setDate(new Date());
-    }, 1000); 
+    }, 1000);
     return () => {
-      clearInterval(timerId); 
+      clearInterval(timerId);
     };
   }, []);
-  
+
   const dayIndex = date.getDay();
   const ukrainianDayOfWeek = daysOfWeekUkr[dayIndex];
 
@@ -62,22 +76,19 @@ export const DateComponent = memo(() => {
 
   return (
     <Navbar.Brand className="Date">
-      <div className='Date__format'> 
-        {ukrainianDayOfWeek}
-      </div>
-      
-      <div className='Date__block'>
-        <span className='Date__format'> 
-          {dayAndMonth}
-        </span>
-        
-        <span 
-          className='Date__format Date__format--clock'
-        > 
-          {time}
-        </span>
-      </div>
+      <div className="Date__format">{ukrainianDayOfWeek}</div>
 
+      <div className="Date__block">
+        <span className="Date__format">{dayAndMonth}</span>
+
+        <span className="Date__format Date__format--clock">
+          {time}
+
+          <Badge pill bg="success" className='m-1'>
+            {activeSessions}
+          </Badge>
+        </span>
+      </div>
     </Navbar.Brand>
   );
 });

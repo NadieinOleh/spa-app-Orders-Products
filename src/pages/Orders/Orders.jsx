@@ -1,4 +1,4 @@
-import { memo, useState } from 'react';
+import { memo, useCallback, useState } from 'react';
 import { Container } from 'react-bootstrap';
 import { useSelector } from 'react-redux';
 import { MyModal } from '../../Components/MyModal/MyModal';
@@ -14,9 +14,9 @@ export const Orders = memo(() => {
   const [isShowProductList, setShowProductList] = useState(false);
   const [isModalShow, setModalShow] = useState(false);
 
-  const getLenghtProducts = (id, productsFromServer) => {
+  const getLenghtProducts = useCallback((id, productsFromServer) => {
    return productsFromServer.filter(item => item.order === id).length;
-  }
+  }, [])
 
   return (
     <Container>
