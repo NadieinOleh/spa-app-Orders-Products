@@ -1,0 +1,41 @@
+@import '../../styles/utils';
+
+.Nav {
+  min-width: 200px;
+  height: 100vh;
+  background-color:#d1e7dd;
+  
+  &__item {
+    &--image {
+      position: relative;
+
+      text-align: center;
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 60%;
+        right: 20%;
+
+        height: 40px;
+        width: 40px;
+
+        background-image: url('../../images/setting.svg.png');
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        
+      }
+    }
+  }
+
+  &__text {
+    width: max-content;
+    border-bottom: 3px solid transparent;
+    border-radius: 1px;
+
+    &:hover {
+      border-bottom: 3px solid $main-color; 
+    }
+  }
+}
