@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/spa-app-Orders-Products/static/css/main.85fee9eb.css",
-    "main.js": "/spa-app-Orders-Products/static/js/main.f52ada28.js",
-    "static/css/529.a9c66d76.chunk.css": "/spa-app-Orders-Products/static/css/529.a9c66d76.chunk.css",
-    "static/js/529.b48ed165.chunk.js": "/spa-app-Orders-Products/static/js/529.b48ed165.chunk.js",
-    "static/css/223.212d3a02.chunk.css": "/spa-app-Orders-Products/static/css/223.212d3a02.chunk.css",
-    "static/js/223.9fb70c60.chunk.js": "/spa-app-Orders-Products/static/js/223.9fb70c60.chunk.js",
-    "static/js/787.d1ebd9b6.chunk.js": "/spa-app-Orders-Products/static/js/787.d1ebd9b6.chunk.js",
-    "static/media/setting.svg.png": "/spa-app-Orders-Products/static/media/setting.svg.a9699c4f21e83f120bb5.png",
-    "static/media/user.png": "/spa-app-Orders-Products/static/media/user.a6143582309785dca610.png",
-    "static/media/clock.svg": "/spa-app-Orders-Products/static/media/clock.cc8816e3023cf2dd1032.svg",
-    "index.html": "/spa-app-Orders-Products/index.html",
-    "main.85fee9eb.css.map": "/spa-app-Orders-Products/static/css/main.85fee9eb.css.map",
-    "main.f52ada28.js.map": "/spa-app-Orders-Products/static/js/main.f52ada28.js.map",
-    "529.a9c66d76.chunk.css.map": "/spa-app-Orders-Products/static/css/529.a9c66d76.chunk.css.map",
-    "529.b48ed165.chunk.js.map": "/spa-app-Orders-Products/static/js/529.b48ed165.chunk.js.map",
-    "223.212d3a02.chunk.css.map": "/spa-app-Orders-Products/static/css/223.212d3a02.chunk.css.map",
-    "223.9fb70c60.chunk.js.map": "/spa-app-Orders-Products/static/js/223.9fb70c60.chunk.js.map",
-    "787.d1ebd9b6.chunk.js.map": "/spa-app-Orders-Products/static/js/787.d1ebd9b6.chunk.js.map"
+    "main.css": "./static/css/main.eba39fd3.css",
+    "main.js": "./static/js/main.a98d1bec.js",
+    "static/css/529.a9c66d76.chunk.css": "./static/css/529.a9c66d76.chunk.css",
+    "static/js/529.b48ed165.chunk.js": "./static/js/529.b48ed165.chunk.js",
+    "static/css/223.212d3a02.chunk.css": "./static/css/223.212d3a02.chunk.css",
+    "static/js/223.9fb70c60.chunk.js": "./static/js/223.9fb70c60.chunk.js",
+    "static/js/787.d1ebd9b6.chunk.js": "./static/js/787.d1ebd9b6.chunk.js",
+    "static/media/setting.svg.png": "./static/media/setting.svg.a9699c4f21e83f120bb5.png",
+    "static/media/user.png": "./static/media/user.a6143582309785dca610.png",
+    "static/media/clock.svg": "./static/media/clock.cc8816e3023cf2dd1032.svg",
+    "index.html": "./index.html",
+    "main.eba39fd3.css.map": "./static/css/main.eba39fd3.css.map",
+    "main.a98d1bec.js.map": "./static/js/main.a98d1bec.js.map",
+    "529.a9c66d76.chunk.css.map": "./static/css/529.a9c66d76.chunk.css.map",
+    "529.b48ed165.chunk.js.map": "./static/js/529.b48ed165.chunk.js.map",
+    "223.212d3a02.chunk.css.map": "./static/css/223.212d3a02.chunk.css.map",
+    "223.9fb70c60.chunk.js.map": "./static/js/223.9fb70c60.chunk.js.map",
+    "787.d1ebd9b6.chunk.js.map": "./static/js/787.d1ebd9b6.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.85fee9eb.css",
-    "static/js/main.f52ada28.js"
+    "static/css/main.eba39fd3.css",
+    "static/js/main.a98d1bec.js"
   ]
 }
