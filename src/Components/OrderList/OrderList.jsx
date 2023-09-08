@@ -1,8 +1,10 @@
+import { UitLeftIndent } from '../Buttons/UitLeftIndent';
+
+import { UitRightIndent } from '../Buttons/UitRightIndent';
+
 import { memo, useState } from 'react';
 import { ListGroup } from 'react-bootstrap';
 import { useSelector } from 'react-redux';
-import { UitLeftIndent } from '../Buttons/UitLeftIndent';
-import { UitRightIndent } from '../Buttons/UitRightIndent';
 
 export const OrderList = memo(({ 
   setOrderId,

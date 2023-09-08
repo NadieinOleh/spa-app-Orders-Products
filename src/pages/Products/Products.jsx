@@ -1,12 +1,14 @@
-import { memo, useCallback, useState } from 'react';
-import { Container } from 'react-bootstrap';
-import { useSelector } from 'react-redux';
 import { ProductList } from '../../Components/ProductList';
 import { ProductSelect } from '../../Components/ProductSelect';
 
+import { memo, useCallback, useState } from 'react';
+
+import { useSelector } from 'react-redux';
+import { Container } from 'react-bootstrap';
+
 import './index.scss';
 
-export const Products = memo(() => {
+const Products = memo(() => {
   const originalProducts = useSelector((state) => state.products.products);
 
   const [query, setQuery] = useState('');
@@ -38,3 +40,4 @@ export const Products = memo(() => {
   );
 });
 
+export default Products;

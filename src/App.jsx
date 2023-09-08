@@ -1,15 +1,19 @@
-import { Route, Routes } from 'react-router-dom';
 import './App.scss';
-import { NavigationMenu } from './Components/NavigationMenu';
-import { TopMenu } from './Components/TopMenu';
-import { Orders } from './pages/Orders';
-import { Products } from './pages/Products';
+
+import Layout from './Components/Layout/Layout';
 import { orders, products } from './api/app';
-import { useDispatch } from 'react-redux';
-import { useEffect } from 'react';
+
 import { setOrders } from './features/OrdersSlice';
 import { setProducts } from './features/ProductsSlice';
 
+import { Route, Routes } from 'react-router-dom';
+
+import { lazy } from 'react';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+
+const Products = lazy(() => import('./pages/Products/Products'));
+const Orders = lazy(() => import('./pages/Orders/Orders'));
 
 function App() {
   const dispatch = useDispatch();
@@ -17,27 +21,18 @@ function App() {
   useEffect(() => {
     dispatch(setOrders(orders));
     dispatch(setProducts(products));
-  })
+  });
 
   return (
-    <div className="App">
-        <TopMenu />
-        <div className="App__content">
-          <div className="App__navigation-menu">
-            <NavigationMenu />
-          </div>
-          <div className="App__main-content">
-            <Routes>
-              <Route path="/orders" element={<Orders />}/>
-              <Route path="/groups" element={<p>groups</p>}/>
-              <Route path="/products" element={<Products/>}/>
-              <Route path="/users" element={<p>users</p>}/>
-              <Route path="/settings" element={<p>settings</p>}/>
-            </Routes>
-          </div>
-        </div>
-
-    </div>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route path="/orders" element={<Orders />} />
+        <Route path="/groups" element={<p>groups</p>} />
+        <Route path="/products" element={<Products />} />
+        <Route path="/users" element={<p>users</p>} />
+        <Route path="/settings" element={<p>settings</p>} />
+      </Route>
+    </Routes>
   );
 }
 

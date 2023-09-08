@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   orders: [],
-}
+};
 
 export const ordersSlice = createSlice({
   name: 'orders',
@@ -12,7 +12,7 @@ export const ordersSlice = createSlice({
       state.orders = action.payload;
     }
   },
-})
+});
 
 
 export const { setOrders } = ordersSlice.actions;

@@ -1,7 +1,9 @@
+import { removeProduct } from '../../features/ProductsSlice';
+
+import { RemoveButton } from '../Buttons/RemoveButton';
+
 import { Button, Modal } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
-import { removeProduct } from '../../features/ProductsSlice';
-import { RemoveButton } from '../Buttons/RemoveButton';
 
 import './index.scss';
 

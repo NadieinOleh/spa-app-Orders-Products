@@ -1,10 +1,8 @@
 import { memo, useEffect, useState } from 'react';
 import { Badge, Navbar } from 'react-bootstrap';
-import io from 'socket.io-client';
+import socketIOClient from 'socket.io-client';
 
 import './index.scss';
-
-const socket = io('http://localhost:3000');
 
 const daysOfWeekUkr = [
   'Неділя',
@@ -12,7 +10,7 @@ const daysOfWeekUkr = [
   'Вівторок',
   'Середа',
   'Четвер',
-  "П'ятниця",
+  'П\'ятниця',
   'Субота',
 ];
 
@@ -37,9 +35,16 @@ export const DateComponent = memo(() => {
 
   const [date, setDate] = useState(currentDate);
 
-useEffect(() => {
-    socket.on('updateActiveSessions', (newActiveSessions) => {
-      setActiveSessions(newActiveSessions);
+  useEffect(() => {
+    const socket = socketIOClient('http://localhost:3000');
+
+    socket.on('connect', () => {
+      // eslint-disable-next-line no-console
+      console.log('Подключено к серверу WebSocket');
+    });
+
+    socket.on('activeSessions', (count) => {
+      setActiveSessions(count);
     });
 
     return () => {
@@ -84,7 +89,7 @@ useEffect(() => {
         <span className="Date__format Date__format--clock">
           {time}
 
-          <Badge pill bg="success" className='m-1'>
+          <Badge pill bg="success" className="m-1">
             {activeSessions}
           </Badge>
         </span>

@@ -1,8 +1,10 @@
+import { NavItemImage } from '../NavItemImage';
+
+import { NavItemList } from '../NavItemList';
+
 import { memo } from 'react';
 import { ListGroup } from 'react-bootstrap';
 
-import { NavItemImage } from '../NavItemImage';
-import { NavItemList } from '../NavItemList';
 
 import './index.scss';
 

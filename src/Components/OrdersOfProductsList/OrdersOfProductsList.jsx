@@ -1,17 +1,17 @@
+import { RemoveButton } from '../Buttons/RemoveButton';
+
 import { memo } from 'react';
 import { ListGroup } from 'react-bootstrap';
 import { useSelector } from 'react-redux';
-import { RemoveButton } from '../Buttons/RemoveButton';
 
 export const OrdersOfProductsList = memo(
   ({ orderId, setProductId, setModalShow }) => {
     const productsFromServer = useSelector((state) => state.products.products);
- 
+
     return (
       <>
         {productsFromServer.map((item) => {
           if (item.order === orderId) {
-            console.log(item.order, item.id);
             return (
               <ListGroup horizontal key={item.id} className="Product m-3">
                 <ListGroup.Item className="Product__block">

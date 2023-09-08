@@ -1,7 +1,8 @@
+import user from '../../images/user.png';
+
 import { memo } from 'react';
 import { Image, ListGroup } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
-import user from '../../images/user.png';
 
 export const NavItemImage = memo(() => {
   return (

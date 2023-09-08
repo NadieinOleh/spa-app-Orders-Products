@@ -1,13 +1,16 @@
+import { MyModal } from '../../Components/MyModal/MyModal';
+
+import { OrderList } from '../../Components/OrderList';
+
+import { OrdersOfProductsList } from '../../Components/OrdersOfProductsList';
+
 import { memo, useCallback, useState } from 'react';
 import { Container } from 'react-bootstrap';
 import { useSelector } from 'react-redux';
-import { MyModal } from '../../Components/MyModal/MyModal';
-import { OrderList } from '../../Components/OrderList';
-import { OrdersOfProductsList } from '../../Components/OrdersOfProductsList';
 
 import './index.scss';
 
-export const Orders = memo(() => {
+const Orders = memo(() => {
   const ordersFromServer = useSelector((state) => state.orders.orders);
   const [orderId, setOrderId] = useState(null);
   const [productId, setProductId] = useState(null);
@@ -15,8 +18,8 @@ export const Orders = memo(() => {
   const [isModalShow, setModalShow] = useState(false);
 
   const getLenghtProducts = useCallback((id, productsFromServer) => {
-   return productsFromServer.filter(item => item.order === id).length;
-  }, [])
+    return productsFromServer.filter(item => item.order === id).length;
+  }, []);
 
   return (
     <Container>
@@ -48,3 +51,5 @@ export const Orders = memo(() => {
     </Container>
   );
 });
+
+export default Orders;

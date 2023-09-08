@@ -1,8 +1,10 @@
+import logo from '../../images/download.png';
+
+import { DateComponent } from '../DateComponent';
+
 import { memo } from 'react';
 import { Form, Image } from 'react-bootstrap';
 import Navbar from 'react-bootstrap/Navbar';
-import logo from '../../images/download.png';
-import { DateComponent } from '../DateComponent';
 
 import './index.scss';
 

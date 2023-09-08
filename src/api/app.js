@@ -4,23 +4,24 @@ export const orders = [
     title: 'Order 1',
     date: '2017-06-29 12:09:33',
     description: 'desc',
-    get products () {  return products.filter(elem => this.id === elem.order) }
+    get products () {  return products.filter(elem => this.id === elem.order); }
   },
   {
     id: 2,
     title: 'Order 2',
     date: '2017-06-29 12:09:33',
     description: 'desc',
-    get products () {  return products.filter(elem => this.id === elem.order)}
+    get products () {  return products.filter(elem => this.id === elem.order);}
   },
   {
     id: 3,
     title: 'Order 3',
     date: '2017-06-29 12:09:33',
     description: 'desc',
-    get products () {  return products.filter(elem => this.id === elem.order) },
+    get products () {  return products
+      .filter(elem => this.id === elem.order); },
   }
-]
+];
 
 
 
@@ -101,4 +102,4 @@ export const products = [
     order: 3,
     date: '2017-06-29 12:09:33'
   }
-]
+];
